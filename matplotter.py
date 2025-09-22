@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 import os
 
+
 basepath = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -14,7 +15,6 @@ euro_dataframe = pd.read_csv(os.path.join(basepath, "USD_EURO_EUROperUSD.csv"))
 yen_dataframe = pd.read_csv(os.path.join(basepath, "./USD_YEN_YENperUSD.csv"))
 cad_dataframe = pd.read_csv(os.path.join(basepath, "./USD_CAD_CADperUSD.csv"))
 baht_dataframe = pd.read_csv(os.path.join(basepath, "./USD_THB_THBperUSD.csv"))
-
 
 plt.plot_date(pd.to_datetime(euro_dataframe["TIME_PERIOD:Period"]),euro_dataframe["OBS_VALUE:Value"], linestyle = "solid", label = "EURO/USD", color = "green", marker = None)
 plt.plot_date(pd.to_datetime(yen_dataframe["TIME_PERIOD:Period"]),yen_dataframe["OBS_VALUE:Value"]/100, linestyle = "solid", label = "YEN/USCENT", color = "yellow", marker = None)
